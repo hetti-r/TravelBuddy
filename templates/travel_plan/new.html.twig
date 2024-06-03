@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Make a New Travel Plan
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<style>{{source('style.css')}}</style>
+		<h1>Create a New Travel Plan</h1>
+
+		{{ include('travel_plan/_form.html.twig') }}
+
+		<button>
+			<a href="{{ path('app_travel_plan_index') }}">Go Back</a>
+		</button>
+	{% endblock %}

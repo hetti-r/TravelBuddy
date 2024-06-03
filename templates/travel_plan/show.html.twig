@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your Travel Plan
+{% endblock %}
+
+{% block body %}
+	{% include 'header.html' %}
+	<main class="showContainer">
+		<style>{{source('style.css')}}</style>
+
+		<div class="showCard">
+			<h1>Your Travel Plan</h1>
+			<img class="showImg" src="https://source.unsplash.com/600x500/?travel">
+			<h2>{{ travel_plan.country }}</h2>
+			<h3>{{ travel_plan.date ? travel_plan.date|date('Y-m-d') : '' }}</h3>
+
+			<h3>Plans for the day:</h3>
+			<div class="morning">
+				<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=UyNm3S4bECd7&format=png&color=000000"><p>Morning:
+					{{ travel_plan.morning }}</p>
+			</div>
+			<p>Noon:
+				{{ travel_plan.noon }}</p>
+			<p>Afternoon:
+				{{ travel_plan.afternoon }}</p>
+			<p>Evening:
+				{{ travel_plan.evening }}</p>
+		</div>
+
+		<button>
+			<a href="{{ path('app_travel_plan_index') }}">Go Back</a>
+		</button>
+
+		<button>
+			<a href="{{ path('app_travel_plan_edit', {'id': travel_plan.id}) }}">Edit</a>
+		</button>
+		{{ include('travel_plan/_delete_form.html.twig') }}
+		{% include 'footer.html' %}
+	{% endblock %}

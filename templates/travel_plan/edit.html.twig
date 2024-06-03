@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Your Travel Plan
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<style>{{source('style.css')}}</style>
+		<h1>Edit Your Travel Plan</h1>
+
+		{{ include('travel_plan/_form.html.twig', {'button_label': 'Update'}) }}
+
+		<button onclick="location.href = {{ path('app_travel_plan_index') }}; ">Go Back
+		</button>
+
+		{{ include('travel_plan/_delete_form.html.twig') }}
+	{% endblock %}

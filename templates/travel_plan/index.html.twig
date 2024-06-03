@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your Plans
+{% endblock %}
+
+{% block body %}
+	<header class="header">
+		{% include 'header.html' %}
+
+		<div class="text-box">
+			<h1 class="heading-primary">
+				<span class="heading-primary-main">Your Plans</span>
+				<span class="heading-primary-sub">Make plans for your upcoming trip!</span>
+			</h1>
+			<a href="{{ path('app_travel_plan_new') }}" class="btn btn-white btn-animated">Make a New Plan</a>
+			<input type="text" name="browsePlans" class="browsePlans" id="browsePlans" autocomplete="off" placeholder="Browse Your Plans...">
+		</div>
+	</header>
+
+	<main class="itiContainer">
+		<style>{{source('style.css')}}</style>
+
+		{% for travel_plan in travel_plans %}
+			<div class="itiCard">
+				<img class="itiImg" src="https://source.unsplash.com/600x500/?travel">
+				<h3>{{ travel_plan.country }}</h3>
+				<p class="itiText">{{ travel_plan.date ? travel_plan.date|date('Y-m-d') : '' }}</p>
+
+				<a class="btn btn-white btn-animated" href="{{ path('app_travel_plan_show', {'id': travel_plan.id}) }}">View More</a>
+
+			</div>
+
+		{% else %}
+			<div>
+				<p colspan="8">no records found</p>
+			</div>
+		{% endfor %}
+	</main>
+	{% include 'footer.html' %}
+{% endblock %}
