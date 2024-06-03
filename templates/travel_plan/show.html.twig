@@ -4,36 +4,50 @@
 {% endblock %}
 
 {% block body %}
-	{% include 'header.html' %}
+	<header class="showHeader">
+		{% include 'header.html' %}
+
+		<div class="text-box">
+			<h1 class="heading-primary">
+				<span class="heading-primary-main">{{ travel_plan.country }}
+				</span>
+				<span class="heading-primary-sub">Your Travel Plan for
+					{{ travel_plan.date ? travel_plan.date|date('d.m.Y') : '' }}</span>
+			</h1>
+			<div class="showButtons3">
+				<a class="btn btn-white btn-animated" href="{{ path('app_travel_plan_index') }}">Go Back</a>
+				<a class="btn btn-white btn-animated" href="{{ path('app_travel_plan_edit', {'id': travel_plan.id}) }}">Edit</a>
+				{{ include('travel_plan/_delete_form.html.twig') }}
+			</div>
+		</div>
+	</header>
 	<main class="showContainer">
 		<style>{{source('style.css')}}</style>
-
-		<div class="showCard">
-			<h1>Your Travel Plan</h1>
-			<img class="showImg" src="https://source.unsplash.com/600x500/?travel">
-			<h2>{{ travel_plan.country }}</h2>
-			<h3>{{ travel_plan.date ? travel_plan.date|date('Y-m-d') : '' }}</h3>
-
-			<h3>Plans for the day:</h3>
-			<div class="morning">
-				<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=UyNm3S4bECd7&format=png&color=000000"><p>Morning:
-					{{ travel_plan.morning }}</p>
-			</div>
-			<p>Noon:
+		<div class="morning">
+			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=UyNm3S4bECd7&format=png&color=000000">
+			<h3>Morning</h3>
+			<p>
+				{{ travel_plan.morning }}</p>
+		</div>
+		<div class="noon">
+			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=8LM7-CYX4BPD&format=png&color=000000">
+			<h3>Noon</h3>
+			<p>
 				{{ travel_plan.noon }}</p>
-			<p>Afternoon:
+		</div>
+		<div class="afternoon">
+			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=P9tT31QGJr_S&format=png&color=000000">
+			<h3>Afternoon</h3>
+			<p>
 				{{ travel_plan.afternoon }}</p>
-			<p>Evening:
+		</div>
+		<div class="evening">
+			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=JGGPnA5MB09j&format=png&color=000000">
+			<h3>Evening</h3>
+			<p>
 				{{ travel_plan.evening }}</p>
 		</div>
+	</div>
 
-		<button>
-			<a href="{{ path('app_travel_plan_index') }}">Go Back</a>
-		</button>
-
-		<button>
-			<a href="{{ path('app_travel_plan_edit', {'id': travel_plan.id}) }}">Edit</a>
-		</button>
-		{{ include('travel_plan/_delete_form.html.twig') }}
-		{% include 'footer.html' %}
-	{% endblock %}
+	{% include 'footer.html' %}
+{% endblock %}

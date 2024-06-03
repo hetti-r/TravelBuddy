@@ -4,14 +4,29 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container">
-		<style>{{source('style.css')}}</style>
-		<h1>Edit Your Travel Plan</h1>
+	<style>{{source('style.css')}}</style>
+	<header class="showHeader">
+		{% include 'header.html' %}
+
+		<div class="text-box">
+			<h1 class="heading-primary">
+				<span class="heading-primary-main">Edit
+				</span>
+				<span class="heading-primary-sub">Your Travel Plan
+				</span>
+			</h1>
+			<div class="showButtons2">
+				<a class="btn btn-white btn-animated" href="{{ path('app_travel_plan_index') }}">Go Back</a>
+				{{ include('travel_plan/_delete_form.html.twig') }}
+			</div>
+		</div>
+	</header>
+
+	<main class="createForm">
 
 		{{ include('travel_plan/_form.html.twig', {'button_label': 'Update'}) }}
 
-		<button onclick="location.href = {{ path('app_travel_plan_index') }}; ">Go Back
-		</button>
+	</main>
 
-		{{ include('travel_plan/_delete_form.html.twig') }}
-	{% endblock %}
+	{% include 'footer.html' %}
+{% endblock %}
