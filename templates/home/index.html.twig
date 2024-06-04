@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block body %}
+	<style>{{source('style.css')}}</style>
+	<header class="header-home">
+		{% include 'header.html' %}
+
+		<div class="text-box">
+			<h1 class="heading-primary-home">
+				<span class="heading-primary-main">Travel Buddy</span>
+				<span class="heading-primary-sub">Your best friend for travelling</span>
+				<a href="{{ path('app_travel_plan_new') }}" class="btn btn-black btn-animated">Start Planning Your Next Trip</a>
+				<div class="homeIcons">
+					<img class="icons" src="icons8-all.png" alt="magnifying glass, sun and cloud, map and marker icons">
+					<span class="heading-primary-sub">Search Destinations</span>
+					<span></span>
+					<span class="heading-primary-sub">Weather Forecast</span>
+					<span></span>
+					<span class="heading-primary-sub">Itinerary Planner</span>
+				</h1>
+			</div>
+		</header>
+		{% include 'footer.html' %}
+	{% endblock %}

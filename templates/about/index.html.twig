@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About
+{% endblock %}
+
+{% block body %}
+	<style>{{source('style.css')}}</style>
+	<header class="showHeader">
+		{% include 'header.html' %}
+
+		<div class="text-box-show">
+			<h1 class="heading-primary">
+				<span class="heading-primary-main">About us</span>
+				<span class="heading-primary-sub">More about Travel Buddy</span>
+			</h1>
+		</div>
+	</header>
+	{% include 'footer.html' %}
+{% endblock %}

@@ -171,14 +171,26 @@ form {
   flex-wrap: nowrap;
   justify-self: center;
   text-align: end;
-  margin-right: 30%;
+  margin-right: 28%;
 }
 
 .header {
   height: 70vh;
   background-image: 
   linear-gradient(to right bottom, 
-  rgba(255, 180, 139, 0.419) 0%, rgba(255, 158, 158, 0.412) 100%),
+  rgba(255, 180, 139, 0.273) 0%, rgba(238, 138, 138, 0.522) 100%),
+   url('https://source.unsplash.com/1920x500/?travel');
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+}
+
+.header-home {
+  height: 100vh;
+  background-image: 
+  linear-gradient(to right bottom, 
+  rgba(255, 180, 139, 0.419) 0%, rgba(195, 100, 100, 0.694) 100%),
    url('https://source.unsplash.com/1920x500/?travel');
   background-size: cover;
   background-position: top;
@@ -195,13 +207,30 @@ form {
   min-width: 30rem;
 }
 
+.text-box-show {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  min-width: 30rem;
+}
+
 .heading-primary {
   color: var(--title-color);
   backface-visibility: hidden;
-  margin-bottom: 30px;
   font-family: var(--title-font);
   font-size: 3rem;
   margin-bottom: 2rem;
+}
+
+.heading-primary-home {
+  color: var(--title-color);
+  backface-visibility: hidden;
+  font-family: var(--title-font);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
 }
 
 .heading-primary-main {
@@ -227,7 +256,7 @@ form {
 }
 
 .showHeader {
-  height: 70vh;
+  height: 60vh;
   background-image: 
   linear-gradient(to right bottom, 
   rgba(255, 180, 139, 0.57) 0%, rgba(255, 158, 158, 0.535) 100%),
@@ -314,6 +343,21 @@ form {
   margin: 1rem;
   padding: 2rem;
 }
+
+.homeIcons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-self: center;
+  color: var(--secondary-color);
+}
+
+.icons {
+  padding-bottom: 1rem;
+}
+
 .showButtons {
   display: flex;
   flex-direction: row;
@@ -364,6 +408,14 @@ display: inline-block;
   align-content: center;
 }
 
+.btn-black {
+  background-color: var(--title-color);
+  color: var(--secondary-color);
+  font-size: 14px;
+  margin: 0.5rem;
+  align-content: center;
+}
+
 .btn-form {
   margin-right:25%;
   margin-left:50%;
@@ -393,6 +445,7 @@ button, select {
   transition: all .2s;
   position: relative;
   border-color: transparent;
+  cursor: pointer;
 }
 
 button:hover,select:hover {
@@ -401,7 +454,7 @@ button:hover,select:hover {
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
   text-align: center;
   width: 100%;
