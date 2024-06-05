@@ -29,4 +29,5 @@ class TravelPlanType extends AbstractType
             'data_class' => TravelPlan::class,
         ]);
     }
+
 }

@@ -1,4 +1,7 @@
+{% form_theme form 'form/fields.html.twig' %}
+
 {{ form_start(form) }}
+
 {{ form_widget(form) }}
 
 <button class="btn btn-form btn-animated">{{ button_label|default('Save') }}</button>
