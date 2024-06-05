@@ -189,7 +189,7 @@ form {
 .header-home {
   height: 100vh;
   background: radial-gradient(circle, rgba(205, 135, 97, 0.571) 21%, rgba(206, 131, 91, 0.528) 50%, rgba(209, 110, 110, 0.551) 100%),
-   url('https://source.unsplash.com/1920x500/?travel');
+   url('https://source.unsplash.com/1920x1920/?travel');
   background-size: cover;
   background-position: top;
   position: relative;
@@ -375,6 +375,38 @@ display: inline-block;
 
 .createForm {
   margin: 2rem;
+}
+
+.itiContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:center;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.aboutCard {
+  background-color: var(--secondary-color);
+  box-shadow: rgba(138, 57, 57, 0.331) 0px 10px 40px;
+  border-radius: 8px;
+  height: fit-content;
+  width: 50%;
+  margin: 1rem;
+  padding-bottom: 2rem;
+  margin-left: 25%;
+  transform: translateY(-28%);
+}
+
+.aboutImg {
+  width: 80%;
+  margin: 10%;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+.aboutText {
+  padding: 2rem;
 }
 
 .btn:link,
