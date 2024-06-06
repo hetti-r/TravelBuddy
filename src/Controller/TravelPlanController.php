@@ -78,4 +78,20 @@ class TravelPlanController extends AbstractController
 
         return $this->redirectToRoute('app_travel_plan_index', [], Response::HTTP_SEE_OTHER);
     }
+    #[Route('/search', name: 'app_search')]
+    public function search(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $searchTerm = $request->query->get('search', '');
+
+        $countries = [];
+        if ($searchTerm) {
+            $countries = $entityManager->getRepository(TravelPlan::class)->findBy([
+                'country' => $searchTerm,
+            ]);
+        }
+
+        return $this->render('travel_plan/index.html.twig', [
+            'countries' => $countries,
+        ]);
+    }
 }

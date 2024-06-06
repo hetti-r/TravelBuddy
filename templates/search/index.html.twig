@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<form action="{{ path('search') }}" method="get">
+		<input type="text" name="search" placeholder="Enter country name" required>
+		<button type="submit">Search</button>
+	</form>
+
+	{% if travel_plans is not empty %}
+		<ul>
+			{% for travel_plan in travel_plans %}
+				<li>{{ travel_plan.country}}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No results found.</p>
+	{% endif %}
+{% endblock %}
