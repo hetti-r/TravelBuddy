@@ -12,16 +12,59 @@
 			<h1 class="heading-primary-home">
 				<span class="heading-primary-main">Travel Buddy</span>
 				<span class="heading-primary-sub">Your best friend for travelling</span>
-				<a href="{{ path('app_travel_plan_new') }}" class="btn btn-black btn-animated">Start Planning Your Next Trip</a>
-				<div class="homeIcons">
-					<img class="icons" src="icons8-all.png" alt="magnifying glass, sun and cloud, map and marker icons">
-					<span class="heading-primary-sub">Search Destinations</span>
-					<span></span>
-					<span class="heading-primary-sub">Weather Forecast</span>
-					<span></span>
-					<span class="heading-primary-sub">Itinerary Planner</span>
-				</h1>
+				<a href="/browse" class="btn btn-black btn-animated">Start Planning Your Next Trip</a>
+			</h1>
+
+			<img class="icons" src="icons8-all.png" alt="magnifying glass, sun and cloud, map and marker icons">
+			<div class="homeIcons">
+				<span class="heading-primary-sub">Search Destinations</span>
+
+				<span class="heading-primary-sub">Weather Forecast</span>
+
+				<span class="heading-primary-sub">Itinerary Planner</span>
+
 			</div>
 		</header>
+
+		<main>
+
+			<div class="homeContainer">
+
+				<div class="homeImg"></div>
+				<div class="homeText">
+					<h2>Search for the vacation of your dreams</h2>
+					<span class="heading-primary-sub">
+						<p class="aboutText">With Travel Buddy's search function you can browse
+							<br>different travelling locations all around the world.</p>
+					</span>
+				</div>
+			</div>
+
+			<div class="homeContainer2">
+
+				<div class="homeText2">
+					<h2>Check the weather of your destination</h2>
+					<span class="heading-primary-sub">
+						<p class="aboutText">Travel Buddy offers weather check by location.
+							<br>You can check the current weather or the forecast for next week.</p>
+					</span>
+				</div>
+				<div class="homeImg2"></div>
+			</div>
+
+			<div class="homeContainer3">
+
+				<div class="homeImg3"></div>
+				<div class="homeText">
+					<h2>Make travel plans for your whole trip</h2>
+					<span class="heading-primary-sub">
+						<p class="aboutText">Our travel itinirary offers you
+																																																								an easy way
+							<br>to plan and organize your upcoming trips.</p>
+					</span>
+				</div>
+			</div>
+
+		</main>
 		{% include 'footer.html' %}
 	{% endblock %}

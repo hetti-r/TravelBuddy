@@ -43,7 +43,10 @@ h1 {
 }
 
 h2 {
-  font-size: 45px;
+  color: var(--title-color);
+  backface-visibility: hidden;
+  font-family: var(--title-font);
+  font-size: 1.5 rem;
 }
 
 h3 {
@@ -92,30 +95,6 @@ h3 {
 }
 .navbar-nav a:hover {
   color: var(--main-color);
-}
-
-.add-box {
-  position: absolute;
-  top: 0.7rem;
-  width: 6rem;
-  right: 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  background-color: var(--accent-color);
-  color: #494547;
-  height: 2rem;
-  margin-left: 2rem;
-  align-content: center;
-  text-align: center;
-}
-
-.add-box:hover {
-  background-color: var(--main-color);
-}
-
-.add-box a {
-  text-decoration: none;
-  color: #494547;
 }
 
 .itiContainer {
@@ -188,7 +167,7 @@ form {
 
 .header-home {
   height: 100vh;
-  background: radial-gradient(circle, rgba(178, 137, 116, 0.641) 21%, rgba(147, 105, 84, 0.469) 50%, rgba(209, 110, 128, 0.471) 100%),
+  background: radial-gradient(circle, rgba(178, 137, 116, 0.641) 21%, rgba(147, 105, 84, 0.469) 50%, rgba(183, 99, 114, 0.471) 100%),
    url('https://source.unsplash.com/1920x1920/?travel');
   background-size: cover;
   background-position: top;
@@ -343,18 +322,100 @@ form {
 }
 
 .homeIcons {
-  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  width: 590px;
+  justify-content: space-between;
   align-self: center;
   color: var(--secondary-color);
+  text-shadow: rgba(138, 57, 57, 0.868) 0px 10px 40px;
 }
 
 .icons {
   padding-bottom: 1rem;
+  width: 510px;
 }
+
+.homeContainer {
+  display: flex;
+  margin: 7rem;
+  margin-left: 20%;
+  width: 60vw;
+  border-radius: 8px;
+  background: rgb(255, 152, 152);
+  background: linear-gradient(45deg, rgb(244, 208, 189) 0%, rgb(247, 186, 186) 100%);
+}
+
+.homeImg {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px 0 0 8px;
+  background-image: 
+  linear-gradient(to right bottom, 
+  #ffb48b46 0%, #ee8a8a85 100%),
+   url('https://source.unsplash.com/250x250/?map');
+}
+
+.homeText {
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.homeContainer2 {
+  display: flex;
+  margin: 7rem;
+  margin-left: 20%;
+  width: 60vw;
+  border-radius: 8px;
+  background: rgb(255, 152, 152);
+  background: linear-gradient(45deg, rgb(244, 208, 189) 0%, rgb(247, 186, 186) 100%);
+} 
+
+.homeImg2 {
+  width: 250px;
+  height: 250px;
+  border-radius: 0 8px 8px 0;
+  background-image: 
+  linear-gradient(to right bottom, 
+  #ffb48b46 0%, #ee8a8a85 100%),
+   url('https://source.unsplash.com/250x250/?sun');
+
+}
+
+.homeText2 {
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 2rem;
+
+}
+
+.homeContainer3 {
+  display: flex;
+  margin: 7rem;
+  margin-left: 20%;
+  width: 60vw;
+  border-radius: 8px;
+  background: rgb(255, 152, 152);
+  background: linear-gradient(45deg, rgb(244, 208, 189) 0%, rgb(247, 186, 186) 100%);
+}
+
+.homeImg3 {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px 0 0 8px;
+  background-image: 
+  linear-gradient(to right bottom, 
+  #ffb48b46 0%, #ee8a8a85 100%),
+   url('https://source.unsplash.com/250x250/?planner');
+}
+
 
 .showButtons {
   display: flex;
@@ -377,14 +438,6 @@ display: inline-block;
   margin: 2rem;
 }
 
-.itiContainer {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content:center;
-  flex-wrap: wrap;
-  width: 100%;
-  text-align: center;
-}
 
 .aboutCard {
   background-color: var(--main-color);
@@ -444,6 +497,7 @@ display: inline-block;
   font-size: 14px;
   margin: 0.5rem;
   align-content: center;
+  color: var(--main-color);
 }
 
 .btn-form {
@@ -489,3 +543,52 @@ footer {
   text-align: center;
   width: 100%;
 }
+
+.add-box {
+  position: absolute;
+  top: 0.7rem;
+  width: 6rem;
+  right: 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: var(--accent-color);
+  color: #494547;
+  height: 2rem;
+  margin-left: 2rem;
+  align-content: center;
+  text-align: center;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.add-box:hover {
+
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  background-image: linear-gradient(to right, #ed6e85, #ec8c69, #f7186a , #FBB03B);
+  box-shadow: 0 4px 15px 0 rgba(236, 116, 148, 0.276);
+}
+
+.add-box a {
+  text-decoration: none;
+  color: #494547;
+}
+
+.add-box-hover:focus {
+  outline: none;
+}
+
+
+
+
+

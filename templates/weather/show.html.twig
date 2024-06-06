@@ -1,0 +1,272 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Weather Details{% endblock %}
+
+{% block body %}
+<body>
+<div class ="location">
+<h2>Weather Details for </h2>
+{% if weatherData and weatherData.current %}
+<h1>{{ weatherData.location.name }},<br> {{ weatherData.location.country }}</h1>
+</div>
+<div class="weather-current">
+<h3>Current Weather:</h3><br>
+<h3>{{weatherData.location.localtime}}</h3><br>
+<p><strong>Temperature(˚C):</strong> {{ weatherData.current.temp_c }}°C</p>
+<p><strong>Temperature(˚F):</strong> {{ weatherData.current.temp_f }}°F</p>
+<p><strong>Condition:</strong> {{ weatherData.current.condition.text }}</p>
+<p><strong>Wind Speed:</strong> {{ weatherData.current.wind_kph }} kph</p>
+<p><strong>Humidity:</strong> {{ weatherData.current.humidity }}%</p>
+</div>
+
+
+<!-- Add more weather details as needed -->
+
+{% else %}
+<p>No weather data available.</p>
+{% endif %}
+
+<div class="weather_high_low">
+<h3>Highs and Lows:</h3><br>
+<p><strong>Max temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].day.maxtemp_c}}˚C</p>
+<p><strong>Min temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].day.mintemp_c}}˚C</p>
+<br>
+<p><strong>Max temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].day.maxtemp_f}}˚F</p>
+<p><strong>Min temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].day.mintemp_f}}˚F</p>
+</div>
+
+<div class="rain_snow">
+<h3>Though rain or snow?</h3><br>
+<p><strong>Chance of rain: </strong>{{weatherData.forecast.forecastday[0].day.daily_chance_of_rain}}%</p>
+<p><strong>Chance of snow: </strong>{{weatherData.forecast.forecastday[0].day.daily_chance_of_snow}}%</p>
+</div>
+
+<div class="sun">
+<h3>If You Are In The Mood</h3><br>
+<p><strong>Sunrise: </strong> {{weatherData.forecast.forecastday[0].astro.sunrise}}</p>
+<p><strong>Sunset: </strong> {{weatherData.forecast.forecastday[0].astro.sunset}}</p>
+</div>
+
+<div class="hour_container">
+<div class="hour">
+<h3>Weather at: 00:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[0].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[0].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[0].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[0].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[0].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 01:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[1].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[1].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[1].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[1].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[1].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 02:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[2].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[2].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[2].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[2].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[2].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 03:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[3].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[3].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[3].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[3].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[3].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 04:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[4].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[4].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[4].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[4].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[4].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 05:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[5].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[5].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[5].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[5].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[5].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 06:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[6].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[6].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[6].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[6].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[6].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 07:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[7].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[7].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[7].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[7].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[7].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 08:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[8].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[8].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[8].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[8].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[8].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 09:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[9].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[9].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[9].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[9].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[9].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 10:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[10].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[10].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[10].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[10].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[10].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 11:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[11].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[11].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[11].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[11].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[11].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 12:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[12].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[12].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[12].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[12].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[12].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 13:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[13].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[13].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[13].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[13].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[13].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 14:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[14].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[14].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[14].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[14].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[14].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 15:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[15].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[15].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[15].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[15].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[15].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 16:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[16].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[16].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[16].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[16].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[16].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 17:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[17].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[17].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[17].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[17].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[17].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 18:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[18].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[18].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[18].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[18].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[18].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 19:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[19].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[19].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[19].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[19].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[19].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 20:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[20].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[20].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[20].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[20].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[20].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 21:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[21].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[21].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[21].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[21].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[21].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 22:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[22].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[22].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[22].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[22].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[22].humidity}}</p>
+</div>
+
+<div class="hour">
+<h3>Weather at: 23:00 </h3><br>
+<p><strong>Temperature ˚C: </strong>{{weatherData.forecast.forecastday[0].hour[23].temp_c}}</p>
+<p><strong>Temperature ˚F: </strong>{{weatherData.forecast.forecastday[0].hour[23].temp_f}}</p>
+<p><strong>Condition: </strong>{{weatherData.forecast.forecastday[0].hour[23].condition.text}}</p>
+<p><strong>Wind Speed: </strong>{{weatherData.forecast.forecastday[0].hour[23].wind_kph}}</p>
+<p><strong>Humidity: </strong>{{weatherData.forecast.forecastday[0].hour[23].humidity}}</p>
+</div>
+</div>
+
+
+
+</body>
+{{dump(weatherData)}}
+{% endblock %}
