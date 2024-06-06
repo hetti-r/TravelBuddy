@@ -4,9 +4,13 @@
 {% endblock %}
 
 {% block body %}
-	<header class="showHeader">
+	<header class="showHeader2">
 		{% include 'header.html' %}
-
+		<style>
+			.showHeader2 {
+				background: radial-gradient(circle, rgba(178, 137, 116, 0.641) 21%, rgba(147, 105, 84, 0.469) 50%, rgba(119, 70, 80, 0.471) 100%), url('https://source.unsplash.com/1920x1920/?{{ travel_plan.country }}')
+			}
+		</style>
 		<div class="text-box-show">
 			<h1 class="heading-primary">
 				<span class="heading-primary-main">{{ travel_plan.country }}
@@ -21,28 +25,28 @@
 			</div>
 		</div>
 	</header>
-	<main class="showContainer">
+	<main class="showContainer2">
 		<style>{{source('style.css')}}</style>
 		<div class="morning">
-			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=UyNm3S4bECd7&format=png&color=000000">
+			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=UyNm3S4bECd7&format=png&color=000000" alt="sun and cloud icon">
 			<h3>Morning</h3>
 			<p>
 				{{ travel_plan.morning }}</p>
 		</div>
 		<div class="noon">
-			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=8LM7-CYX4BPD&format=png&color=000000">
+			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=8LM7-CYX4BPD&format=png&color=000000" alt="sun icon">
 			<h3>Noon</h3>
 			<p>
 				{{ travel_plan.noon }}</p>
 		</div>
 		<div class="afternoon">
-			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=P9tT31QGJr_S&format=png&color=000000">
+			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=P9tT31QGJr_S&format=png&color=000000" alt="sun and cloud icon">
 			<h3>Afternoon</h3>
 			<p>
 				{{ travel_plan.afternoon }}</p>
 		</div>
 		<div class="evening">
-			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=JGGPnA5MB09j&format=png&color=000000">
+			<img class="daytimeImg" src="https://img.icons8.com/?size=100&id=JGGPnA5MB09j&format=png&color=000000" alt="moon icon">
 			<h3>Evening</h3>
 			<p>
 				{{ travel_plan.evening }}</p>

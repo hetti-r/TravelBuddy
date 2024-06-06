@@ -8,9 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/country')]
 class CountryController extends AbstractController
 {
-    #[Route("/country", name: "app_country")]
+    #[Route("/", name: "app_country")]
     public function index(): Response
     {
         $ch = curl_init("https://restcountries.com/v3.1/all");
@@ -29,6 +30,12 @@ class CountryController extends AbstractController
         return $this->render("country/index.html.twig", [
             "data" => $data,
         ]);
+    }
+
+    #[Route('/{data.country.name.common}', name: 'app_location_show', methods: ['GET'])]
+    public function location(): Response
+    {
+        return $this->render('country/location.html.twig');
     }
 
     #[Route("/weather", name: "app_weather", methods: ["GET", "POST"])]

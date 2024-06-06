@@ -22,7 +22,7 @@
 
 		{% for travel_plan in travel_plans %}
 			<div class="itiCard">
-				<img class="itiImg" src="https://source.unsplash.com/600x500/?travel">
+				<img class="itiImg" src="https://source.unsplash.com/600x500/?{{ travel_plan.country }}" alt="picture of {{ travel_plan.country }}">
 				<h3>{{ travel_plan.country }}</h3>
 				<p class="itiText">{{ travel_plan.date ? travel_plan.date|date('Y-m-d') : '' }}</p>
 

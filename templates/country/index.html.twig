@@ -1,44 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Countries API
+{% block title %}Browse Locations
 {% endblock %}
 
 {% block body %}
-	<h1>Country Data</h1>
+	<header class="header">
+		{% include 'header.html' %}
 
-	<ul>
-		{% for country in data %}
-			<div class="container">
-				<li>
-					<div class="card">
-						<h2>{{ country.name.common }}</h2>
-						{{ country.flag }}
-						<p>
-							<strong>Continent:</strong>
-							{{ country.region }}</p>
-						<p>
-							<strong>Population:</strong>
-							{{ country.population }}</p>
-						{% if country.capitalInfo %}
-							<p>
-								<strong>Coordinates:</strong>
-								{{ country.capitalInfo.latlng[0] }},
-								{{ country.capitalInfo.latlng[1] }}</p>
-							<p>
-								<strong>Capital:</strong>
-								{{ country.capital[0] }}</p>
-							<p>
-								<strong>Timezone:</strong>
-								{{ country.timezones[0] }}</p>
-
-						{% endif %}
-
-
-						<a href="{{ country.maps.googleMaps }}">GoogleMaps</a>
-					</div>
-				</li>
-			{% endfor %}
+		<div class="text-box">
+			<h1 class="heading-primary">
+				<span class="heading-primary-main">Browse Locations</span>
+				<span class="heading-primary-sub">Find a location for your dream vacation</span>
+			</h1>
+			<input type="text" name="searchLocations" class="browsePlans" id="searchLocations" autocomplete="off" placeholder="Browse Locations...">
 		</div>
-	</ul>
+	</header>
 
+	<main class="itiContainer">
+		<style>{{source('style.css')}}</style>
+
+		{% for country in data %}
+			<div class="itiCard">
+				<img class="itiImg" src="https://source.unsplash.com/600x500/?{{country.name.common}}">
+				<h3>{{ country.name.common }}</h3>
+				<p>
+					<strong>Continent:</strong>
+					{{ country.region }}</p>
+				<p>
+					<strong>Population:</strong>
+					{{ country.population }}</p>
+
+				{% if country.capitalInfo %}
+					<p>
+						<strong>Coordinates:</strong>
+						{{ country.capitalInfo.latlng[0] }},
+						{{ country.capitalInfo.latlng[1] }}</p>
+					<p>
+						<strong>Capital:</strong>
+						{{ country.capital[0] }}</p>
+					<p>
+						<strong>Timezone:</strong>
+						{{ country.timezones[0] }}</p>
+
+				{% endif %}
+				<a class="btn btn-white btn-animated" href="{{ country.maps.googleMaps }}">Map</a>
+
+				<a class="btn btn-white btn-animated" href="/{country.name.common}">View More</a>
+			</div>
+		{% endfor %}
+	</main>
+	{% include 'footer.html' %}
 {% endblock %}
