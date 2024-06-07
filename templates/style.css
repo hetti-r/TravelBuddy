@@ -10,7 +10,7 @@
   --accent-color:#fda7a3;
   --title-font:"Quicksand", sans-serif;
   --font: "Rubik", sans-serif;
-  --bg-G: radial-gradient(circle, rgba(178, 137, 116, 0.641) 21%, rgba(147, 105, 84, 0.469) 50%, rgba(119, 70, 80, 0.471) 100%),
+  --bg-G: radial-gradient(circle, rgba(178, 137, 116, 0.534) 21%, rgba(147, 105, 84, 0.383) 50%, rgba(119, 70, 80, 0.363) 100%),
   url('https://source.unsplash.com/1920x1920/?travel');
 }
 
